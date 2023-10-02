@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
 @import url(./css/cardDetails.scss);
 
 :root {
   font-family: 'Space Grotesk', sans-serif;
 
-  --linear-gradient: linear-gradient(130deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  --linear-gradient: linear-gradient(90deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
 
   --main-white: hsl(0, 0%, 100%);
   --main-light-grayish-violet: hsl(270, 3%, 87%);
@@ -28,6 +30,7 @@ body{
   
   @media (min-width: 500px) {
     background: url('./assets/backgrounds/bg-main-desktop.png') no-repeat;
+    background-size: auto 100vh;
   }
   background: url('./assets/backgrounds/bg-main-mobile.png') no-repeat;
   background-size: cover;
