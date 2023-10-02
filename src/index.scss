@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+@import url(./css/cardDetails.scss);
+
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+
+  --linear-gradient: linear-gradient(130deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+
+  --main-white: hsl(0, 0%, 100%);
+  --main-light-grayish-violet: hsl(270, 3%, 87%);
+  --main-dark-grayish-violet:  hsl(279, 6%, 55%);
+  --main-very-dark-violet: hsl(278, 68%, 11%);
+
+  --main-error-color: hsl(0, 100%, 66%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body{
+  margin: 0;
+
+  font-size: 18px;
+  background-color: var(--main-white);
+  
+  @media (min-width: 500px) {
+    background: url('./assets/backgrounds/bg-main-desktop.png') no-repeat;
+  }
+  background: url('./assets/backgrounds/bg-main-mobile.png') no-repeat;
+  background-size: cover;
+}
