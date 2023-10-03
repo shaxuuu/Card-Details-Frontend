@@ -1,7 +1,15 @@
 import { CardBack } from "./CardBack"
 import { CardFront } from "./CardFront"
+
+
 export const CardDetails = () => {
 
+    const inputCheckStrgin = ( input ) => {
+        if( !( input.keyCode >= 65 && input.keyCode <= 90 ) && input.key !== ' ' && input.key !== 'Backspace'){
+            input.preventDefault()
+        }
+    }
+    
 
     return (
         <div id="cardDetailsContent">
@@ -15,7 +23,7 @@ export const CardDetails = () => {
             
                 <div className="inputHolder">
                     <span className="fieldTitle">Cardholder Name</span>
-                    <input className="detailsInput" placeholder="e.g. Jane Appleseed" pattern="[A-Za-z]*" type="text" id="name" /> 
+                    <input className="detailsInput" placeholder="e.g. Jane Appleseed" pattern="[A-Za-z]*" onKeyDown={(event) => {inputCheckStrgin(event)}} type="text" id="name" /> 
                 </div>
                 
                 <div className="inputHolder">
