@@ -1,21 +1,25 @@
+import { useRef, useState } from "react"
 import { CardBack } from "./CardBack"
 import { CardFront } from "./CardFront"
 
 
 export const CardDetails = () => {
 
+    const inputRefs = { name : useRef("") }
+    const [ nameState, changeName ] = useState("")
+
+
     const inputCheckStrgin = ( input ) => {
         if( !( input.keyCode >= 65 && input.keyCode <= 90 ) && input.key !== ' ' && input.key !== 'Backspace'){
             input.preventDefault()
         }
     }
-    
 
     return (
         <div id="cardDetailsContent">
 
             <div id="cardDetailsCards">
-                <CardFront />
+                <CardFront data={{ name : nameState }}/>
                 <CardBack />
             </div>
 
@@ -23,7 +27,7 @@ export const CardDetails = () => {
             
                 <div className="inputHolder">
                     <span className="fieldTitle">Cardholder Name</span>
-                    <input className="detailsInput" placeholder="e.g. Jane Appleseed" pattern="[A-Za-z]*" onKeyDown={(event) => {inputCheckStrgin(event)}} type="text" id="name" /> 
+                    <input className="detailsInput" placeholder="e.g. Jane Appleseed" ref={inputRefs.name} onChange={() => ( changeName( inputRefs.name.current.value ) )} pattern="[A-Za-z]*" onKeyDown={(event) => {inputCheckStrgin(event)}} type="text" id="name" /> 
                 </div>
                 
                 <div className="inputHolder">
