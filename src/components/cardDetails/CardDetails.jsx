@@ -5,14 +5,29 @@ import { CardFront } from "./CardFront"
 
 export const CardDetails = () => {
 
-    const inputRefs = { name : useRef("") }
+    const inputRefs = { name : useRef(""), card : useRef() }
     const [ nameState, changeName ] = useState("")
 
 
     const inputCheckStrgin = ( input ) => {
-        if( !( input.keyCode >= 65 && input.keyCode <= 90 ) && input.key !== ' ' && input.key !== 'Backspace'){
+        if( !( input.keyCode >= 65 && input.keyCode <= 90 ) && input.key !== ' ' && input.key !== 'Backspace'  && input.key !== 'ArrowLeft'  && input.key !== 'ArrowRight' ){
             input.preventDefault()
         }
+    }
+
+    const inputCheckCard = ( input ) => {
+        if( !( input.keyCode >= 48 && input.keyCode <= 57 ) && input.key !== 'Backspace' && input.key !== 'ArrowLeft'  && input.key !== 'ArrowRight' ){
+            input.preventDefault()
+        }else{
+            
+            if( inputRefs.card.current.value.length % 4 === 0 ){
+                console.log("add")
+                inputRefs.card.current.value.replace("  ")
+            }
+
+        }
+
+        
     }
 
     return (
@@ -32,7 +47,7 @@ export const CardDetails = () => {
                 
                 <div className="inputHolder">
                     <span className="fieldTitle">Card Number</span>
-                    <input className="detailsInput" placeholder="e.g. 1234 5678 9123 0000" type="text" id="cardNumber" />
+                    <input className="detailsInput" placeholder="e.g. 1234 5678 9123 0000" ref={inputRefs.card} onKeyDown={(event) => {inputCheckCard(event)}} type="text" id="cardNumber" />
                 </div>
                 
                 <div className="inputHolder" data-direction="row">

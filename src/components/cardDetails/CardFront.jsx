@@ -12,7 +12,7 @@ export const CardFront = ( props ) => {
             </div>
 
             <span className="cardNumber">0000 0000 0000 0000</span>
-            <span className="nameAndDate"> <span>{ name[0] != '' ? name[0] : "NAME" } { name[name.length - 1] != undefined && name.length > 0 ? name[name.length - 1] : "SURNAME" } </span>  <span>00/00</span> </span>
+            <span className="nameAndDate"> <span>{ name[0] != '' ? name[0] : "NAME" } { name[name.length - 1] != undefined && name.length > 1 ? name[name.length - 1] : "SURNAME" } </span>  <span>00/00</span> </span>
 
 
         </div>
