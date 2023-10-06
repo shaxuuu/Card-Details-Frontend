@@ -5,7 +5,7 @@ import { CardFront } from "./CardFront"
 
 export const CardDetails = () => {
 
-    const inputRefs = { name : useRef(""), card : useRef() }
+    const inputRefs = { name : useRef(), card : useRef() }
     const [ nameState, changeName ] = useState("")
 
 
@@ -19,11 +19,18 @@ export const CardDetails = () => {
         if( !( input.keyCode >= 48 && input.keyCode <= 57 ) && input.key !== 'Backspace' && input.key !== 'ArrowLeft'  && input.key !== 'ArrowRight' ){
             input.preventDefault()
         }else{
-            
-            if( inputRefs.card.current.value.length % 4 === 0 ){
-                console.log("add")
-                inputRefs.card.current.value.replace("  ")
+            let ccNumber = ""
+ 
+            console.log()
+            for (let letter = 0; letter < inputRefs.card.current.value.length; letter++) {
+                console.log( letter )
+                if( letter % 4 === 0 && letter !== 0 ){
+                    ccNumber += inputRefs.card.current.value
+                }
+
             }
+
+            inputRefs.card.current.value = ccNumber
 
         }
 
@@ -42,12 +49,12 @@ export const CardDetails = () => {
             
                 <div className="inputHolder">
                     <span className="fieldTitle">Cardholder Name</span>
-                    <input className="detailsInput" placeholder="e.g. Jane Appleseed" ref={inputRefs.name} onChange={() => ( changeName( inputRefs.name.current.value ) )} pattern="[A-Za-z]*" onKeyDown={(event) => {inputCheckStrgin(event)}} type="text" id="name" /> 
+                    <input className="detailsInput" placeholder="e.g. Jane Appleseed" ref={inputRefs.name} onChange={() => ( changeName( inputRefs.name.current.value ) )} pattern="[A-Za-z]*" onKeyUp={(event) => {inputCheckStrgin(event)}} type="text" id="name" /> 
                 </div>
                 
                 <div className="inputHolder">
                     <span className="fieldTitle">Card Number</span>
-                    <input className="detailsInput" placeholder="e.g. 1234 5678 9123 0000" ref={inputRefs.card} onKeyDown={(event) => {inputCheckCard(event)}} type="text" id="cardNumber" />
+                    <input className="detailsInput" placeholder="e.g. 1234 5678 9123 0000" ref={inputRefs.card} onKeyUp={(event) => {inputCheckCard(event)}} type="text" id="cardNumber" />
                 </div>
                 
                 <div className="inputHolder" data-direction="row">

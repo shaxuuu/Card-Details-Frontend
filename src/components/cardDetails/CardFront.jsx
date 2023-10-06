@@ -1,7 +1,6 @@
 export const CardFront = ( props ) => {
 
     const name = props.data.name.split(" ") 
-    console.log( name.length - 1 )
 
     return( 
         <div className="cardDetailsCard" data-side="front"> 
