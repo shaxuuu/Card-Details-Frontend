@@ -1,8 +1,8 @@
-export const CardBack = () => {
+export const CardBack = (props) => {
 
     return( 
         <div className="cardDetailsCard" data-side="back">
-            <span className="cvc">000</span>
+            <span className="cvc">{props.data.cvc !== '' ? props.data.cvc : "000" }</span>
         </div>
     )
 
