@@ -181,9 +181,13 @@
                     background-clip: padding-box, border-box;
                     background-origin: padding-box, border-box;
                 }
+
                 
             }
 
+            .invalidInput {
+                border-color: red;
+            }
 
         }
 
