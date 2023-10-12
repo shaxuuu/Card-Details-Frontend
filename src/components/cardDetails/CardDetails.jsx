@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { CardBack } from "./CardBack"
 import { CardFront } from "./CardFront"
 import { compileString } from "sass"
@@ -143,6 +143,14 @@ export const CardDetails = () => {
         }
     }
 
+    useEffect( () => {
+        for( const input in inputRefs ){
+            inputRefs[input].current.addEventListener("invalid", (event) => {
+                event.preventDefault()
+            })
+        }
+
+    })
 
     return (
         <div id="cardDetailsContent">
