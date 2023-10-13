@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from "react"
 import { CardBack } from "./CardBack"
 import { CardFront } from "./CardFront"
-import { compileString } from "sass"
 
 
 export const CardDetails = () => {
 
     const inputRefs = { name : useRef(), card : useRef(), month : useRef(), year : useRef(), cvc : useRef() }
+    
     const [ nameState, changeName ] = useState("")
     const [ ccNumberState, changeCcNumber ] = useState("")
-    const [ cvcState, changeCvc ] = useState("")
+    const [ cvcState, changeCvc ] = useState(undefined)
     const [ monthState, changeMonth ] = useState(undefined)
     const [ yearState, changeYear ] = useState(undefined)
+    const year = new Date().getFullYear().toString().slice(2)
 
     const checkIfNumeric = ( input ) => {
         if( !( input.keyCode >= 48 && input.keyCode <= 57 ) && input.key !== 'Backspace' && input.key !== 'ArrowLeft'  && input.key !== 'ArrowRight' ){
@@ -149,7 +150,6 @@ export const CardDetails = () => {
                 event.preventDefault()
             })
         }
-
     })
 
     return (
@@ -164,25 +164,25 @@ export const CardDetails = () => {
             
                 <div className="inputHolder">
                     <span className="fieldTitle">Cardholder Name</span>
-                    <input className="detailsInput" placeholder="e.g. Jane Appleseed" ref={inputRefs.name} onChange={() => ( changeName( inputRefs.name.current.value ) )} onKeyDown={(event) => {inputCheckStrgin(event)}} type="text" id="name" required/> 
+                    <input className="detailsInput" tabIndex="1" placeholder="e.g. Jane Appleseed" ref={inputRefs.name} onChange={() => ( changeName( inputRefs.name.current.value ) )} onKeyDown={(event) => {inputCheckStrgin(event)}} type="text" id="name" required/> 
                 </div>
                 
                 <div className="inputHolder">
                     <span className="fieldTitle">Card Number</span>
-                    <input className="detailsInput" placeholder="e.g. 1234 5678 9123 0000" ref={inputRefs.card} onChange={() => ( changeCcNumber( inputRefs.card.current.value ) )} onKeyDown={(event) => {inputCheckCard(event)}} maxLength="19" type="text" id="cardNumber" required/>
+                    <input className="detailsInput" tabIndex="2" placeholder="e.g. 1234 5678 9123 0000" ref={inputRefs.card} onChange={() => ( changeCcNumber( inputRefs.card.current.value ) )} onKeyDown={(event) => {inputCheckCard(event)}} minLength="19" maxLength="19" type="text" id="cardNumber" required/>
                 </div>
                 
                 <div className="inputHolder" data-direction="row">
                     <div>
                         <span className="fieldTitle">Exp. Date (MM/YY)</span>
                         <div className="cardDate">
-                            <input className="detailsInput" placeholder="MM" ref={inputRefs.month} type="text" maxLength="2" onBlur={inputMonthLostFocus} onKeyDown={inputCheckMonth} id="Month" required/>
-                            <input className="detailsInput" placeholder="YY" ref={inputRefs.year} type="text" maxLength="2" onChange={() => ( changeYear( inputRefs.year.current.value ) )} onKeyDown={inputCheckYear} id="Year" required/>
+                            <input className="detailsInput" tabIndex="3" placeholder="MM" ref={inputRefs.month} type="text" minLength="2" maxLength="2" onBlur={inputMonthLostFocus} onKeyDown={inputCheckMonth} id="Month" required/>
+                            <input className="detailsInput" tabIndex="4" placeholder="YY" ref={inputRefs.year} type="text" maxLength="2" onChange={() => ( changeYear( inputRefs.year.current.value ) )} onKeyDown={inputCheckYear} id="Year" required/>
                         </div>
                     </div>
                     <div>
                         <span className="fieldTitle">CVC</span>
-                        <input className="detailsInput" placeholder="e.g. 123" ref={inputRefs.cvc} type="text" onKeyDown={(event) => {inputCheckCvc(event)}} onChange={() => changeCvc(inputRefs.cvc.current.value)} maxLength="4" id="CVC" required/>
+                        <input className="detailsInput" tabIndex="5" placeholder="e.g. 123" ref={inputRefs.cvc} type="text" onKeyDown={(event) => {inputCheckCvc(event)}} onChange={() => changeCvc(inputRefs.cvc.current.value)} minLength="3" maxLength="4"  id="CVC" required/>
                     </div>
 
                 </div>
