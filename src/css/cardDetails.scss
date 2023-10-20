@@ -182,7 +182,9 @@
                     background-origin: padding-box, border-box;
                 }
 
-                
+                &:invalid{
+                    border-color: red;
+                }
             }
 
             .invalidInput {
