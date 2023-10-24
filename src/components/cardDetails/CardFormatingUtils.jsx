@@ -102,12 +102,30 @@ const inputCheckYear = ( input ) => {
 const validateInput = (ref, condition) => {
     if( condition( ref.current.value.length )  ){
         ref.current.classList.add('invalidInput')
+        return false
     }else{
         ref.current.classList.remove('invalidInput')
+        return true
     }
 }
 
+const validateForm = ( event, inputRefs, changeSent ) => {
+    event.preventDefault()
 
+    let pass = true
+
+    for (const id in inputRefs) {
+
+        const inputValid = validateInput( inputRefs[id], ( i => i === 0))   
+        if( pass === true ){
+            pass = inputValid
+        }
+
+    }
+    
+    if( pass == true ){ changeSent(true) };
+
+}
 
 const Utils = {
     checkIfNumeric,
@@ -117,6 +135,7 @@ const Utils = {
     inputCheckMonth,
     inputMonthLostFocus,
     inputCheckYear,
-    validateInput
+    validateInput,
+    validateForm
 }
 export default Utils
