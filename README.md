@@ -7,9 +7,16 @@
 
 ### Built With
 [![React][React.js]][React-url]
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+
 
 ### Features 
-  * Full 
+  * Auto Formatting Inputs ( Adding and removing spaces in card number | Adding zeros before numbers grater than 1 in month input etc. )
+  * Red highlight when trying to submit with empty fields.
+  * Live check if input is valid when typing.
+  * Live update on cards on the left.
+  * Name input prepared for second name.
+  * 
 
 ### Preview
 
