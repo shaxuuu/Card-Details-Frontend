@@ -19,11 +19,12 @@
 
 ### Preview
 
-![Image Preview](https://github.com/shaxuuu/Card-Details-Frontend/assets/48029949/73d70211-6d93-46ff-ab03-99e608c5d409)
+![Image Preview](https://github.com/shaxuuu/Card-Details-Frontend/assets/48029949/01b080f7-9321-4f25-a910-ebd0d9fcf6b6)
 
 
 
-https://github.com/shaxuuu/Card-Details-Frontend/assets/48029949/bcc51795-70a0-4a13-903c-4fdce43f79e4
+
+https://github.com/shaxuuu/Card-Details-Frontend/assets/48029949/e4339c8c-a1bc-4b8a-9c1a-4877ee4f23b2
 
 
 
