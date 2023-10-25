@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">Card Details Page</h3>
+  <h1 align="center">Card Details Page</h1>
 </div>
 
 ### Built With
