@@ -6,7 +6,7 @@
 </div>
 
 ### Built With
-[![React][React.js]][React-url]
+[![React][React.js]][React-url] <br/>
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
 
@@ -16,7 +16,6 @@
   * Live check if input is valid when typing.
   * Live update on cards on the left.
   * Name input prepared for second name.
-  * 
 
 ### Preview
 
