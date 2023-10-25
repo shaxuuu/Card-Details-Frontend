@@ -13,7 +13,7 @@
 
 ### Preview
 
-![Image Preview](https://github.com/shaxuuu/Card-Details-Frontend/assets/48029949/a147c391-6a20-43c3-95fb-72625a92cc63)
+![Image Preview](https://github.com/shaxuuu/Card-Details-Frontend/assets/48029949/73d70211-6d93-46ff-ab03-99e608c5d409)
 
 
 
