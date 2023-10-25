@@ -17,6 +17,10 @@
 
 
 
+https://github.com/shaxuuu/Card-Details-Frontend/assets/48029949/bd6c48d4-dd1e-43c7-afa9-f71bbc20702b
+
+
+
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
