@@ -12,7 +12,7 @@
 
 ### Features 
   * Auto Formatting Inputs ( Adding and removing spaces in card number | Adding zeros before numbers grater than 1 in month input etc. )
-  * Red highlight when trying to submit with empty fields. ( Whole form validation )
+  * Red highlight when trying to submit with empty fields. ( Overall whole form validation )
   * Live check if input is valid when typing.
   * Live update on preview cards.
   * Name input prepared for second name.
